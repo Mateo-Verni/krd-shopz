@@ -7,6 +7,7 @@ export default function Item({
   price,
   pictureURL,
   handleCartAdd,
+  cardClick,
 }) {
   const [item, setItem] = useState(0);
   return (
@@ -16,6 +17,9 @@ export default function Item({
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
+          <button className="btn btn-primary" onClick={cardClick}>
+            Ver Detalle
+          </button>
           <p className="card-text">{price}</p>
         </div>
       </div>
