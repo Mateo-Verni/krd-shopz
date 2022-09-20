@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import mock from "../data.json";
 import Item from "./Item";
+import ItemDetail from "./ItemDetail";
 
-function ItemDetailContainer() {
+function ItemDetailContainer({ handleCartAdd }) {
   const { id } = useParams();
   const [details, setDetails] = useState(null);
 
@@ -27,13 +28,7 @@ function ItemDetailContainer() {
   return details === null ? (
     <p>Loading</p>
   ) : (
-    <Item
-      key={details.id}
-      description={details.description}
-      pictureURL={details.pictureURL}
-      price={details.price}
-      title={details.title}
-    />
+    <ItemDetail detail={details} handleCartAdd={handleCartAdd} />
   );
 }
 

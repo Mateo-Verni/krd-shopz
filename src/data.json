@@ -1,30 +1,34 @@
 [
   {
     "id": 1,
-    "title": "Air Force Gore Tex 2",
+    "quantity": 0,
+    "title": "Nike Air Jordan 1 Retro High",
     "description": "Modelo de Zapa",
-    "price": 50000,
-    "pictureURL": "https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_auto,w_1400/fl_lossy,pg_1/qsdrtn3exos5qn5zkvg8/air-jordan-1-chicago?fimg-ssr-default"
+    "price": "Valor $59.900",
+    "pictureURL": "https://static.runnea.com/images/201808/63611742959-air-jordan-retro-1-high-og-black-toe-white-black-gym-red-011758_1-400x400x80xX.jpg?1"
   },
   {
     "id": 2,
-    "title": "NIKE TOTINE OREKE EDITION",
+    "quantity": 0,
+    "title": "Nike Air Force 1 Gore Tex",
     "description": "Modelo de Zapa",
-    "price": 50000,
+    "price": "Valor $53.000",
     "pictureURL": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw42370dbb/products/NI_DO2760-220/NI_DO2760-220-1.JPG"
   },
   {
     "id": 3,
-    "title": "Zapatillas Nike Air Max Intrlk",
+    "quantity": 0,
+    "title": "Nike Air Max Intrlk",
     "description": "Modelo de Zapa",
-    "price": 50000,
+    "price": "Valor $43.500",
     "pictureURL": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw7c433248/products/NI_DC5421-002/NI_DC5421-002-1.JPG"
   },
   {
     "id": 4,
-    "title": "Zapatillas Nike Air Max Terrascape",
+    "quantity": 0,
+    "title": "Nike Air Max Terrascape",
     "description": "Modelo de Zapa",
-    "price": 50000,
+    "price": "Valor $62.800",
     "pictureURL": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw25f1bd0a/products/NI_DH4677-200/NI_DH4677-200-1.JPG"
   }
 ]

@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import ItemCount from "./ItemCount";
+import Item from "./Item";
 
-function ItemDetail({ price, description }) {
+function ItemDetail({ detail, handleCartAdd }) {
+  const [item, setItem] = useState(0);
+
+  const handleAddClick = () => {
+    setItem(item + 1);
+  };
+  const handleSubClick = () => {
+    setItem(item - 1);
+  };
   return (
-    <div>
-      <p>{price}</p>
-      <p>{description}</p>
-    </div>
+    <>
+      <Item
+        title={detail.item}
+        description={detail.description}
+        price={detail.price}
+        pictureURL={detail.pictureURL}
+      />
+      <ItemCount
+        initial={item}
+        stock={5}
+        onAdd={handleAddClick}
+        onSub={handleSubClick}
+        handleCartAdd={() => handleCartAdd(item)}
+      />
+    </>
   );
 }
 

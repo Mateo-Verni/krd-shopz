@@ -17,7 +17,7 @@ const ItemListContainer = ({ greeting, handleCartAdd }) => {
 
   return (
     <div>
-      <p>{greeting}</p>
+      <p className="titulo">{greeting}</p>
       {!items ? (
         <h1 className="m-5 p-5">Loading</h1>
       ) : (

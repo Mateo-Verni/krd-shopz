@@ -21,12 +21,15 @@ function App() {
           path="/"
           element={
             <ItemListContainer
-              greeting="Titulo o texto provisional"
+              greeting="Disfrutá de nuestra mejor selección de Sneakers!"
               handleCartAdd={onAddCart}
             />
           }
         />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route
+          path="/item/:id"
+          element={<ItemDetailContainer handleCartAdd={onAddCart} />}
+        />
       </Routes>
     </BrowserRouter>
   );

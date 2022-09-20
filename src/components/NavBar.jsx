@@ -22,16 +22,20 @@ export default function NavBar({ quantity }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Home
-              </a>
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to={"/hombre"}
+              >
+                Hombre
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Link
-              </a>
+              <Link className="nav-link" to={"/mujer"}>
+                Mujer
+              </Link>
             </li>
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
                 href="/"
@@ -40,17 +44,17 @@ export default function NavBar({ quantity }) {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Promociones
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a className="dropdown-item" href="/">
-                    Action
+                    Productos discontinuos
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="/">
-                    Another action
+                    Cupón de descuento
                   </a>
                 </li>
                 <li>
@@ -58,11 +62,11 @@ export default function NavBar({ quantity }) {
                 </li>
                 <li>
                   <a className="dropdown-item" href="/">
-                    Something else here
+                    Ayuda
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li className="nav-item"></li>
           </ul>
         </div>
