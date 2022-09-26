@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CreateCartContext } from "./context/CartContext";
 import CartWidget from "./CartWidget";
 
-export default function NavBar({ quantity }) {
+export default function NavBar() {
+  const { contextValue } = useContext(CreateCartContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -71,7 +75,7 @@ export default function NavBar({ quantity }) {
           </ul>
         </div>
       </div>
-      <CartWidget quantity={quantity} />
+      <CartWidget quantity={contextValue.length} />
     </nav>
   );
 }

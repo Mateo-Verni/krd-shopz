@@ -18,11 +18,9 @@ export default function Item({
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>
-          {!location.pathname.includes("item") && (
-            <button className="btn btn-primary" onClick={cardClick}>
-              Ver Detalle
-            </button>
-          )}
+          <button className="btn btn-primary" onClick={cardClick}>
+            Ver Detalle
+          </button>
           <p className="card-text">{price}</p>
         </div>
       </div>
