@@ -26,16 +26,12 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
-                className="nav-link active"
-                aria-current="page"
-                to={"/hombre"}
-              >
+              <Link className="nav-link active" aria-current="page" to={"/men"}>
                 Hombre
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={"/mujer"}>
+              <Link className="nav-link" to={"/women"}>
                 Mujer
               </Link>
             </li>
@@ -75,7 +71,7 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-      <CartWidget quantity={contextValue.length} />
+      {!!contextValue.length && <CartWidget quantity={contextValue.length} />}
     </nav>
   );
 }

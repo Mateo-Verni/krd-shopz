@@ -4,7 +4,7 @@
     "quantity": 0,
     "title": "Nike Air Jordan 1 Retro High",
     "description": "Modelo de Zapa",
-    "price": "Valor $59.900",
+    "price": 120,
     "pictureURL": "https://static.runnea.com/images/201808/63611742959-air-jordan-retro-1-high-og-black-toe-white-black-gym-red-011758_1-400x400x80xX.jpg?1"
   },
   {
@@ -12,7 +12,7 @@
     "quantity": 0,
     "title": "Nike Air Force 1 Gore Tex",
     "description": "Modelo de Zapa",
-    "price": "Valor $53.000",
+    "price": 165,
     "pictureURL": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw42370dbb/products/NI_DO2760-220/NI_DO2760-220-1.JPG"
   },
   {
@@ -20,7 +20,7 @@
     "quantity": 0,
     "title": "Nike Air Max Intrlk",
     "description": "Modelo de Zapa",
-    "price": "Valor $43.500",
+    "price": 170,
     "pictureURL": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw7c433248/products/NI_DC5421-002/NI_DC5421-002-1.JPG"
   },
   {
@@ -28,7 +28,7 @@
     "quantity": 0,
     "title": "Nike Air Max Terrascape",
     "description": "Modelo de Zapa",
-    "price": "Valor $62.800",
+    "price": 110,
     "pictureURL": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw25f1bd0a/products/NI_DH4677-200/NI_DH4677-200-1.JPG"
   }
 ]

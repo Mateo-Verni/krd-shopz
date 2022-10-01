@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import mock from "../data.json";
 import Item from "./Item";
 import ItemDetail from "./ItemDetail";
+import { db } from "../firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 function ItemDetailContainer({ handleCartAdd }) {
   const { id } = useParams();
@@ -12,16 +14,25 @@ function ItemDetailContainer({ handleCartAdd }) {
     getItems();
   }, []);
 
-  const getItems = () => {
-    setTimeout(() => {
-      const data = mock.filter((elemento) => {
-        console.log(elemento, parseInt(id));
-        return elemento.id === parseInt(id);
-      });
-      console.log(data);
-      if (!data.length) return;
-      setDetails(data[0]);
-    }, 2000);
+  const getItems = async () => {
+    const docRefMen = doc(db, "zapatillas", id);
+    const docRefWomen = doc(db, "mujeres", id);
+    const docSnapMen = await getDoc(docRefMen);
+    const docSnapWomen = await getDoc(docRefWomen);
+
+    if (docSnapMen.exists()) {
+      setDetails({ ...docSnapMen.data(), id: docSnapMen.id });
+    }
+    if (docSnapWomen.exists()) {
+      setDetails({ ...docSnapWomen.data(), id: docSnapWomen.id });
+    }
+    // setTimeout(() => {
+    //   const data = mock.filter((elemento) => {
+    //     return elemento.id === parseInt(id);
+    //   });
+    //   if (!data.length) return;
+    //   setDetails(data[0]);
+    // }, 2000);
   };
   // condicion ? casoTrue : casoFalse
 
