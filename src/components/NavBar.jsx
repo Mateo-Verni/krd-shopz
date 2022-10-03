@@ -71,7 +71,12 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-      {!!contextValue.length && <CartWidget quantity={contextValue.length} />}
+      <CartWidget
+        quantity={
+          contextValue.reduce((acc, val) => acc + val.quantity, 0) ||
+          "Carro vacio"
+        }
+      />
     </nav>
   );
 }

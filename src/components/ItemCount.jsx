@@ -25,7 +25,11 @@ export default function ItemCount({
         </button>
       </div>
       <div className="mt-2">
-        <button className="btn btn-primary" onClick={handleCartAdd}>
+        <button
+          className="btn btn-primary"
+          onClick={handleCartAdd}
+          disabled={!initial}
+        >
           Añadir al Carrito
         </button>
       </div>

@@ -1,12 +1,36 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CreateCartContext } from "../context/CartContext";
+import { db } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 export default function Cart() {
   const { contextValue, onDelete } = useContext(CreateCartContext);
 
   const handleDelete = (id) => {
     onDelete(id);
+  };
+
+  const handleBuy = async (data) => {
+    const colRef = collection(db, "orders");
+    const objectToInsert = {
+      buyer: { name: "mate", phone: 123456789, email: "asd@asd.com" },
+      items: contextValue,
+      date: new Date(),
+      totalPrice: contextValue.reduce(
+        (acc, val) => acc + val.price * val.quantity,
+        0
+      ),
+    };
+
+    try {
+      const documentInserted = await addDoc(colRef, objectToInsert);
+      alert(
+        `Su orden de compra fue realizada, id: ${documentInserted._key.path.segments[1]}`
+      );
+    } catch (e) {
+      console.log("errorrrrr =>>", e);
+    }
   };
 
   return contextValue.length ? (
@@ -35,12 +59,14 @@ export default function Cart() {
           </div>
         </div>
       ))}
-      <>
-        Total:
-        {contextValue.reduce((acc, val) => {
-          return acc + val.price * val.quantity;
-        }, 0)}
-      </>
+      Total:
+      {contextValue.reduce((acc, val) => {
+        return acc + val.price * val.quantity;
+      }, 0)}
+      <button className="btn btn-success d-block" onClick={handleBuy}>
+        Finalizar compra
+      </button>
+      {buyFinished && JSON.stringify()}
     </>
   ) : (
     <Link to={"/"}>Volver al inicio</Link>
