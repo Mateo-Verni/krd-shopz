@@ -5,6 +5,7 @@ import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 export default function Cart() {
+  const [isLoading, setIsLoading] = useState(false);
   const { contextValue, onDelete } = useContext(CreateCartContext);
 
   const handleDelete = (id) => {
@@ -12,6 +13,7 @@ export default function Cart() {
   };
 
   const handleBuy = async (data) => {
+    setIsLoading(true);
     const colRef = collection(db, "orders");
     const objectToInsert = {
       buyer: { name: "mate", phone: 123456789, email: "asd@asd.com" },
@@ -31,6 +33,7 @@ export default function Cart() {
     } catch (e) {
       console.log("errorrrrr =>>", e);
     }
+    setIsLoading(false);
   };
 
   return contextValue.length ? (
@@ -63,10 +66,13 @@ export default function Cart() {
       {contextValue.reduce((acc, val) => {
         return acc + val.price * val.quantity;
       }, 0)}
-      <button className="btn btn-success d-block" onClick={handleBuy}>
+      <button
+        className="btn btn-success d-block"
+        onClick={handleBuy}
+        disabled={isLoading}
+      >
         Finalizar compra
       </button>
-      {buyFinished && JSON.stringify()}
     </>
   ) : (
     <Link to={"/"}>Volver al inicio</Link>
