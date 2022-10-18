@@ -6,7 +6,6 @@ export const CartContext = ({ children }) => {
   const [contextValue, setContextValue] = useState([]);
 
   const onAdd = (item) => {
-    // SI CONTEXT VALUE TIENE UN ELEMENTO CON EL ID DE ITEM.ID NO LO AGREGO
     const itemExists = contextValue.find((element) => element.id === item.id);
     if (itemExists) {
       const newState = contextValue.filter((e) => e.id !== itemExists.id);

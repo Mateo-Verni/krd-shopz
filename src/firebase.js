@@ -1,20 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD9L8dNgNOw3YuEbG3ck5AWWqQHatNUGTQ",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "krd-shopz.firebaseapp.com",
   projectId: "krd-shopz",
   storageBucket: "krd-shopz.appspot.com",
   messagingSenderId: "572784372893",
-  appId: "1:572784372893:web:5f5a539f18f306675bb874",
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const getFirebase = () => {

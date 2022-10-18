@@ -26,15 +26,7 @@ function ItemDetailContainer({ handleCartAdd }) {
     if (docSnapWomen.exists()) {
       setDetails({ ...docSnapWomen.data(), id: docSnapWomen.id });
     }
-    // setTimeout(() => {
-    //   const data = mock.filter((elemento) => {
-    //     return elemento.id === parseInt(id);
-    //   });
-    //   if (!data.length) return;
-    //   setDetails(data[0]);
-    // }, 2000);
   };
-  // condicion ? casoTrue : casoFalse
 
   return details === null ? (
     <p>Loading</p>
